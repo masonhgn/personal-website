@@ -44,6 +44,9 @@
   section {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
   }
 
   section > * {
@@ -52,7 +55,6 @@
   @media (max-width: 768px) {
     section {
       flex-direction: column-reverse;
-      justify-content: center;
       align-items: center;
     }
   }
@@ -65,7 +67,7 @@
   }
 
   .hero__links--main {
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem 0rem;
     display: flex;
     gap: 1rem;
   }
@@ -86,10 +88,10 @@
 
   .hero__img--profile {
     aspect-ratio: 1/1;
-    max-width: 100%;
+    max-width: 25rem;
   }
 
-  .hero__img--profile img {
+  .hero__img--profile > img {
   }
 
   ul {
