@@ -3,25 +3,68 @@
 ---
 
 <section>
-  <h1>Hi, I'm Mason Hagan</h1>
-  <p>Computer Science Student</p>
-  <p>Florida State University</p>
-  <div class="hero__links--main">
-    <a href="#resume" class="">Resume</a>
-    <a href="#projects" class="">Projects</a>
+  <div class="hero__content">
+    <h1>Mason Hagan</h1>
+    <p>Computer Science Student</p>
+    <p>Florida State University</p>
+    <div class="hero__links--main">
+      <a href="#resume" class="">Resume</a>
+      <a href="#projects" class="">Projects</a>
+    </div>
+    <div class="hero__links--secondary">
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/mason-hagan/" target="_blank" rel="noopener noreferrer">
+            <img src="/img/linkedin-box-fill.svg" alt="LinkedIn Icon" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/masonhgn" target="_blank" rel="noopener noreferrer">
+            <img src="/img/github-fill.svg" alt="Github Icon" />
+          </a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/masonhagan" target="_blank" rel="noopener noreferrer">
+            <img src="/img/leetcode.png" alt="Leetcode Icon" />
+          </a>
+        </li>
+        <li>
+          <a href="mailto:mh20gx@fsu.edu" target="_blank" rel="noopener noreferrer">
+            <img src="/img/mail-line.svg" alt="Email Icon" />
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="hero__links--secondary">
-    <ul>
-      <li>
-        <a href="https://www.linkedin.com/in/mason-hagan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </li>
-      <li><a href="https://github.com/masonhgn" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://leetcode.com/masonhagan" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
-      <li><a href="mailto:mh20gx@fsu.edu" target="_blank" rel="noopener noreferrer">Email</a></li>
-    </ul>
-  </div>
-  <div>
+  <div class="hero__img--profile">
     <img src="/img/profile.png" alt="Mason Hagan profile photo" />
   </div>
 </section>
-<style></style>
+<style>
+  section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5rem;
+  }
+
+  ul {
+    /* remove bullet points */
+    list-style-type: none;
+
+    /* horizontal list */
+    display: flex;
+    gap: 1rem;
+  }
+
+  li img {
+    aspect-ratio: 1/1;
+    width: 3rem;
+  }
+</style>
