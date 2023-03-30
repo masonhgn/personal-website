@@ -23,6 +23,7 @@ import Layout from "../layouts/Layout.astro";
   </style>
 
   <style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
     /*
       Brian Poblete's CSS Reset
       
@@ -41,6 +42,7 @@ import Layout from "../layouts/Layout.astro";
     html,
     body {
       height: 100%;
+      font-family: "Space Grotesk", sans-serif;
     }
     body {
       line-height: 1.5;
@@ -101,6 +103,12 @@ import Layout from "../layouts/Layout.astro";
     #root,
     #__next {
       isolation: isolate;
+    }
+
+    .shadow {
+      box-shadow: 6px 6px gray;
+      color: inherit;
+      border: 2px solid black;
     }
   </style>
 </Layout>

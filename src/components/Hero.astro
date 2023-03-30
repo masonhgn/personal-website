@@ -8,8 +8,8 @@
     <p>Computer Science Student</p>
     <p>Florida State University</p>
     <div class="hero__links--main">
-      <a href="#resume" class="">Resume</a>
-      <a href="#projects" class="">Projects</a>
+      <a href="#resume" class="hero__links--main__button shadow">Resume</a>
+      <a href="#projects" class="hero__links--main__button shadow">Projects</a>
     </div>
     <div class="hero__links--secondary">
       <ul>
@@ -37,7 +37,7 @@
     </div>
   </div>
   <div class="hero__img--profile">
-    <img src="/img/profile.png" alt="Mason Hagan profile photo" />
+    <img src="/img/profile.png" alt="Mason Hagan profile photo" class="shadow" />
   </div>
 </section>
 <style>
@@ -46,12 +46,50 @@
     flex-direction: row;
   }
 
+  section > * {
+    padding: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   .hero__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 5rem;
+  }
+
+  .hero__links--main {
+    padding: 1rem 1rem 1rem 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hero__links--main > a {
+    min-width: 8rem;
+    aspect-ratio: 2/0.7;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #efefefff;
+    padding: 0.5rem 1rem;
+
+    :visited {
+      color: inherit;
+    }
+  }
+
+  .hero__img--profile {
+    aspect-ratio: 1/1;
+    max-width: 100%;
+  }
+
+  .hero__img--profile img {
   }
 
   ul {
@@ -61,6 +99,7 @@
     /* horizontal list */
     display: flex;
     gap: 1rem;
+    padding: 0;
   }
 
   li img {
