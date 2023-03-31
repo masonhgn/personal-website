@@ -7,10 +7,15 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Mason Hagan">
   <main>
+    <hr class="fancy" />
+    <hr />
     <hr />
     <Hero />
     <hr />
+    <hr />
+    <hr class="fancy" />
     <Resume />
+    <hr class="fancy" />
     <Projects />
   </main>
   <style>
@@ -19,6 +24,17 @@ import Layout from "../layouts/Layout.astro";
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+    hr {
+      margin: 0.25rem 0;
+      width: 95%;
+    }
+    .fancy {
+      height: 30px;
+      background-color: rgb(54, 54, 54);
+      border: 1px solid rgb(54, 54, 54);
+      box-shadow: 8px 8px gray;
+      margin: 1rem 0;
     }
   </style>
 
@@ -43,6 +59,7 @@ import Layout from "../layouts/Layout.astro";
     body {
       height: 100%;
       font-family: "Space Grotesk", sans-serif;
+      scroll-behavior: smooth;
     }
     body {
       line-height: 1.5;
@@ -109,6 +126,10 @@ import Layout from "../layouts/Layout.astro";
       box-shadow: 6px 6px gray;
       color: inherit;
       border: 2px solid black;
+    }
+
+    section {
+      padding: 4rem 0;
     }
   </style>
 </Layout>
