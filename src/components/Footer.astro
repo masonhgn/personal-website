@@ -3,48 +3,29 @@
 
 <footer>
   <div>
-    <a href="https://github.com/Brian-Pob">
-      <img src="/img/minimal_pfp_bw.png" alt="brian poblete logo" />
-    </a>
-    <p>
-      Site by <a href="https://github.com/Brian-Pob"> Brian Poblete</a>. Built with
-      <a href="https://astro.build">Astro</a>.
-    </p>
+    <a href="#top" class="shadow">Back to Top</a>
   </div>
 </footer>
 <style>
-  footer {
-    min-width: 100%;
-    min-height: 6rem;
-    display: grid;
-    place-items: center;
-    font-size: 1rem;
-    font-weight: 700;
-    background-color: rgb(52, 49, 49);
-    color: white;
-    padding: 1rem;
+  a {
+    min-width: 8rem;
+    aspect-ratio: 2/0.7;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #efefefff;
+    padding: 0.5rem 1rem;
+
+    :visited {
+      color: inherit;
+    }
   }
 
-  footer div {
+  div {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-  }
-
-  footer a {
-    color: #eabcfb;
-  }
-
-  footer a:visited {
-    color: #e7a4ff;
-  }
-
-  img {
-    width: 5rem;
-    max-width: 5rem;
-    aspect-ratio: 1/1;
-    margin: 0 1rem;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 0;
   }
 </style>
