@@ -43,9 +43,10 @@
 <style>
   section {
     display: flex;
+    width: 100%;
+    max-width: 900px;
     flex-direction: row;
-    justify-content: center;
-    column-gap: 4rem;
+    justify-content: space-between;
   }
 
   section > * {
@@ -64,6 +65,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .hero__content {
+      align-items: center;
+    }
   }
 
   .hero__links--main {
@@ -91,9 +98,6 @@
     max-width: 25rem;
   }
 
-  .hero__img--profile > img {
-  }
-
   ul {
     /* remove bullet points */
     list-style-type: none;
@@ -102,6 +106,20 @@
     display: flex;
     gap: 1rem;
     padding: 0;
+  }
+
+  .hero__links--secondary {
+    min-width: 100%;
+  }
+  .hero__links--secondary > ul {
+    display: flex;
+    justify-content: start;
+  }
+
+  @media (max-width: 768px) {
+    .hero__links--secondary > ul {
+      justify-content: space-between;
+    }
   }
 
   li img {
