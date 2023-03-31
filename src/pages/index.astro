@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import Resume from "../components/Resume.astro";
@@ -9,14 +10,22 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <hr class="fancy" />
     <hr />
-    <hr />
+    <hr class="small" />
     <Hero />
-    <hr />
+    <hr class="small" />
     <hr />
     <hr class="fancy" />
+    <hr />
+    <hr class="small" />
     <Resume />
+    <hr class="small" />
+    <hr />
     <hr class="fancy" />
+    <hr />
+    <hr class="small" />
+
     <Projects />
+    <Footer />
   </main>
   <style>
     main {
@@ -28,6 +37,9 @@ import Layout from "../layouts/Layout.astro";
     hr {
       margin: 0.25rem 0;
       width: 95%;
+    }
+    .small {
+      width: 94%;
     }
     .fancy {
       height: 30px;
