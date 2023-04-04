@@ -1,0 +1,134 @@
+---
+// Not sure what the difference is between img and Image in astro.
+---
+
+<section id="top">
+  <div class="hero__content">
+    <h1>Mason Hagan</h1>
+    <p>Computer Science Student</p>
+    <p>Florida State University</p>
+    <div class="hero__links--main">
+      <a href="#resume" class="hero__links--main__button shadow">Resume</a>
+      <a href="#projects" class="hero__links--main__button shadow">Projects</a>
+    </div>
+    <div class="hero__links--secondary">
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/mason-hagan/" target="_blank" rel="noopener noreferrer">
+            <img src="/img/linkedin-box-fill.svg" alt="LinkedIn Icon" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/masonhgn" target="_blank" rel="noopener noreferrer">
+            <img src="/img/github-fill.svg" alt="Github Icon" />
+          </a>
+        </li>
+        <li>
+          <a href="https://leetcode.com/masonhagan" target="_blank" rel="noopener noreferrer">
+            <img src="/img/leetcode.png" alt="Leetcode Icon" />
+          </a>
+        </li>
+        <li>
+          <a href="mailto:mh20gx@fsu.edu" target="_blank" rel="noopener noreferrer">
+            <img src="/img/mail-line.svg" alt="Email Icon" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="hero__img--profile">
+    <img src="/img/profile.png" alt="Mason Hagan profile photo" class="shadow" />
+  </div>
+</section>
+<style>
+  section {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  section > * {
+    padding: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 2rem 0;
+    }
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .hero__content {
+      align-items: center;
+    }
+  }
+
+  .hero__links--main {
+    padding: 1rem 0rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .hero__links--main > a {
+    min-width: 8rem;
+    aspect-ratio: 2/0.7;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #efefefff;
+    padding: 0.5rem 1rem;
+
+    :visited {
+      color: inherit;
+    }
+  }
+
+  .hero__img--profile {
+    aspect-ratio: 1/1;
+    max-width: 25rem;
+  }
+
+  ul {
+    /* remove bullet points */
+    list-style-type: none;
+
+    /* horizontal list */
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .hero__links--secondary {
+    min-width: 100%;
+  }
+  .hero__links--secondary > ul {
+    display: flex;
+    justify-content: start;
+  }
+
+  @media (max-width: 768px) {
+    .hero__links--secondary > ul {
+      justify-content: space-between;
+    }
+  }
+
+  li img {
+    aspect-ratio: 1/1;
+    width: 3rem;
+  }
+
+  .shoutout {
+    font-size: 0.75rem;
+    padding: 1rem 0rem;
+  }
+</style>
