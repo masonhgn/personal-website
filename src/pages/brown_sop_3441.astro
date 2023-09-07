@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason Hagan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200&family=Manrope:wght@400;500&family=Nanum+Gothic&family=Quicksand:wght@400;500&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        * {
+            font-family: 'Nanum Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            font-size: 110%;
+        }
+
+        .active .content {
+            max-height: 2000px;  /* Or any large value that suits your content */
+        }
+
+        body {
+            padding: 20px;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%; /* change to 100% so it spans the full width on mobile */
+            margin: 0 auto;
+        }
+
+        .content-container {
+            width: 90%;
+            text-align: center;
+        }
+
+        .top-images {
+            display: flex;
+            flex-direction: column; /* Stack images on top of each other on mobile */
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .top-images img {
+            width: 80%;  /* Adjust the size for mobile */
+            margin: 10px 0; /* Space between stacked images */
+            border-radius: 5px;
+        }
+
+        .card {
+            background-color: #ffffff; /* Card background color */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow for a subtle lift effect */
+            border-radius: 10px;
+            border: 1px solid rgba(80, 80, 80, 0.15); /* Lighter border for subtleness */
+            overflow: hidden; /* Ensures the image and content respect the border-radius */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%; /* It's good to have a defined width */
+            margin-bottom: 10px;
+        }
+
+        
+
+        .collapsible {
+            background-color: #793d0d;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .collapsible:hover {
+            background-color: #924b12;
+        }
+
+        .collapsible:after {
+            content: '\02795'; 
+            font-size: 13px;
+            color: white;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2796"; 
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f9f9f9;
+            padding: 0 18px;
+            border-radius: 5px;
+        }
+
+        .content p, .content h2, .content h5 {
+            padding: 15px 0; /* Adjust this value as you see fit */
+        }
+
+        .image-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-section img {
+            width: 100%; 
+            margin-bottom: 10px; /* Provide some space between stacked images */
+        }
+
+        .card-section {
+            display: flex;
+            flex-direction: column; /* Stack cards on top of each other on mobile */
+            align-items: center; /* Center cards on mobile */
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px); /* Slight vertical lift on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* Enhanced shadow depth on hover */
+            border-color: rgba(80, 80, 80, 0.25); /* Darken the border a bit on hover */
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto; 
+            display: block;
+        }
+
+        .card-body {
+            background-color: #f0f0f0;
+            padding: 8px 15px; /* Decreased the vertical padding even more */
+            border-top: 1px solid rgba(80, 80, 80, 0.1);
+        }
+
+        .card-text {
+            color: #333;
+            font-size: 0.85em; /* Reduced font size to 85% of its current value */
+            margin: 0; /* No change, kept for reference */
+        }
+
+        .content h5 {
+            font-weight: bold;
+        }
+
+        @media only screen and (min-width: 768px) { /* 768px is a common breakpoint for tablets and above */
+            body {
+                width: 80%;
+            }
+
+            .content-container {
+                width: 60%;
+            }
+
+            .top-images {
+                flex-direction: row; /* Place images side by side on larger screens */
+            }
+
+            .top-images img {
+                width: 40%;
+                margin: 0 5%; /* Space between side by side images */
+            }
+
+            .card-section {
+                flex-direction: row; /* Cards side by side on larger screens */
+                justify-content: space-around; /* Distribute space around cards on larger screens */
+            }
+
+            .card {
+                width: 18rem; /* Return the card width to 18rem on larger screens */
+                margin-bottom: 0; /* Remove the bottom margin on larger screens */
+            }
+
+            .image-section {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .image-section img {
+                width: 32%;  /* Adjust this for the images' size */
+                height: auto;
+            }
+        }
+
+        a,a:hover {
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <br>
+    <br>
+
+    <div class="content-container">
+        <!-- Top images -->
+        <div class="top-images">
+            <img src="img/profile_pic2.jpg" alt="Image 1 Description">
+            <img src="img/BrownCSLogo.png" alt="Image 2 Description">
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    <h2 style="text-align: center;">What makes me a good candidate for Brown?</h2>
+    <p>Mason Hagan</p>
+
+    <br>
+    <br>
+
+    <p style="width: 80%; text-align: center;">This webpage provides some extra information about me as an applicant. Please click to expand the tabs below.</p>
+    
+    <br>
+    <br>
+    <br>
+    
+    
+    <button class="collapsible">What makes me a good fit for the program?</button>
+    <div class="content">
+
+
+        <h5>1. My academic performance is on an upward trajectory. Every semester I'm performing better while taking harder classes.
+            Below is some visual information about my GPA.</h5>
+        
+        <p>While I started off with a poor GPA (before I started computer science), I've worked extremely hard to improve every semester. My most recent semester is 
+            my best with a 4.0 term GPA across 19 credit hours. I am confident that this trajectory will continue through my graduate studies.</p>
+        <div class="image-section">
+            <img src="img/cumulative_gpa.png" alt="GPA Image 1 Description">
+            <img src="img/term_gpa.png" alt="GPA Image 2 Description">
+            <img src="img/cumulative_gpa_units.png" alt="GPA Image 3 Description">
+        </div>
+
+
+
+        <h5>2. I have a clearly defined interest in computer science backed by a colorful assortment of projects and research. 
+            This has given me a strong technical background that will contribute to my success at Brown.</h5>
+        <p style="text-align: center;">Assorted below are some of my favorite (non class related) projects that I believe best encapsulate my exploration of computer science.</p>
+        <p style="color: red; font-weight: bold; text-align: center;">Please feel free to click on these cards for more information.</p>
+
+
+            <div class="card-section">
+
+                <a href="https://github.com/masonhgn/gpa_visualizer" target="_blank" rel="noopener noreferrer">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/project3.png" alt="Card image cap">
+                        <div class="card-body" style="text-align: center;">
+                            <h5 style="text-align: center;">Transcript Data Analyzer</h5>
+                        <p class="card-text">A tool that provides visual data about a student's academic performance. Provides various useful metrics including the trajectory of 
+                            their overall GPA, term GPA, and credit hours enrolled per semester.</p>
+                        </div>
+                    </div>
+                    </a>
+
+                <a href="https://github.com/masonhgn/Ivy-Math" target="_blank" rel="noopener noreferrer">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/project1.png" alt="Card image cap">
+                        <div class="card-body" style="text-align: center;">
+                            <h5>Multi-User Math Education Platform</h5>
+                            <p class="card-text">A platform for users to upload and watch mathematics related content. Videos are separated by 4 different categories of mathematics.
+                        </p>
+                        </div>
+                    </div>      
+                </a>          
+
+                <a href="https://github.com/masonhgn/profitron" target="_blank" rel="noopener noreferrer">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/project4.png" alt="Card image cap">
+                        <div class="card-body" style="text-align: center;">
+                            <h5>Automated Algorithmic Trading Engine</h5>
+                            <p class="card-text">This is an automated trading program that provides many technical indicators, and places trades based on preloaded strategies.
+                                This gave me a lot of experience with working with financial data, and drawing statistical inferences on price movements through things like univariate linear regression.
+                            </p>
+                        </div>
+                    </div> 
+                </a>
+
+                <a href="https://github.com/masonhgn/ivy" target="_blank" rel="noopener noreferrer">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="img/project2.png" alt="Card image cap">
+                        <div class="card-body" style="text-align: center;">
+                            <h5 style="text-align: center;">Job Application Tracking Platform</h5>
+                        <p class="card-text">Last year was a tough season for finding an internship. As an candidate who sent over 120 applications, I found it tedious to keep track of 
+                            all of my applications. This web app provides smooth experience for storing applications, keeping track of their statuses, and getting useful real time metrics.
+                        </p>
+                        </div>
+                    </div>
+                </a>
+
+
+
+            </div>
+
+
+
+    </div>
+    
+
+    <button class="collapsible">What do I want to do at Brown?</button>
+    <div class="content">
+
+        <h5 style="font-weight: bold; text-align: center;">If admitted, here is what I would take and why I would take it.</h5>
+        <p style="text-align: center;">This is meant to provide some more information about why I'm interested in Brown's program specifically.</p>
+
+        <h6 style="font-weight: bold;">Introduction to Computer Graphics (1230), Advanced Computer Graphics (2240)</h6>
+        <p>These are easily the classes I'd be most excited for. I've read some of Daniel Ritchie's research on 3D object generation and found the parts I understood 
+            to be super interesting, and would love to take a class from him. It's also been a childhood dream of 
+            mine to make a 3D game from scratch at some point in my career, and I think these two courses would provide a great foundation for that. 
+            I'd be most excited about the raytracing part of 1230.</p>
+
+
+        <h6 style="font-weight: bold;">Operating Systems (1670)</h6>
+        <p>Though I took an OS class during undergrad and did well, I want to revisit these concepts because I feel that this topic is one of the most 
+                underappreciated yet highly useful in the field of software engineering. I've also noticed that C is like the latin of programming languages, since many are based on it and 
+                draw their syntactical ideas from it. Sharpening my C skills seems like a good idea for this reason.</p>
+
+        <h6 style="font-weight: bold;">Probabilistic Methods in Computer Science (2540)</h6>
+        <p>In the last year I've placed a heavier emphasis on machine learning and its statistical underpinnings, because 
+            I'm well aware of how important it will become given the current climate. Since foundations are extremely 
+            important, I believe this class would be very beneficial for me.
+        </p>
+               
+
+        <h6 style="font-weight: bold;">Deep learning (2470)</h6>
+        <p>This course would solidify a lot of ML concepts that I lack a thorough understanding of yet have used
+             in projects before, like optimizers and the different types of neural networks that came before the transformer model.</p>
+
+        <h6 style="font-weight: bold;">Computer Vision (1430)</h6>
+        <p>I've had a lot of ideas in the past for projects that use computer vision in some form or another, 
+            and this course would undoubtedly lay the proper groundwork for me to get started. I also just wanted to explore more avenues of machine learning 
+        in general, and computer vision seems to be the most interesting.</p>
+
+        <h6 style="font-weight: bold;">Design and Analysis of Algorithms (1570)</h6>
+        <p>I've never taken a formal algorithms class, and although I've been on the leetcode grind and done a fair amount of competitive programming,
+            I've still got some major flaws in my knowledge and approach to some problems. If I want to crush interviews and perform better in competitions,
+            this course would definitely put me on the right path.
+        </p>
+
+        <h6 style="font-weight: bold;">Theory of Computation (1010)</h6>
+        <p>This class was actually not required for my undergraduate CS degree, but a lot of the theory of computation 
+            concepts I learned in discrete math I found very intriguing, so I would like to have this under my belt if I wish to call 
+            myself an expert in computer science.</p>
+
+    </div>
+
+
+    <button class="collapsible">What am I up to this Fall?</button>
+    <div class="content">
+        <p>1. This September, I am (under supervision of prof. Gary Tyson) submitting a research paper on Transformer models and their
+            resiliency to typos, exploring BERT and GPT2.</p>
+        <p>2. I will continue my role as an undergraduate researcher under Dr. Xiuwen Liu in conjunction with the FSU college of medicine, where we are developing an 
+            interactive patient using Python (Flask) and some large language models, which medical students can use for practicing their patient assessments.
+        </p>
+        <p>3. I'm signed up to be a TA for an introductory programming class (COP3014).</p>
+        <p>4. Aside from the 4 courses I need in order to complete my CS degree (COP4521, COP4710, CEN4090L, CIS3250L), I am also taking 2 
+            advanced machine learning related courses (CIS4940 Data Mining, STA4634) in hopes of expanding my scope of knowledge in ML.
+        </p>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+    
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+</html>
+
